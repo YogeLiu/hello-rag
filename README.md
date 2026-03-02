@@ -43,21 +43,36 @@ Planned components:
 
 ### Prerequisites
 - Python 3.10+
-- UV package manager
+- UV package manager (recommended) or pip
 
-### Setup
+### Setup with UV (Recommended)
 ```bash
 # Clone the repository
 git clone git@github.com:YogeLiu/hello-rag.git
 cd hello-rag
 
-# Create virtual environment with UV
+# Create virtual environment and install dependencies
 uv venv
 source .venv/bin/activate  # On Unix/macOS
 # .venv\Scripts\activate   # On Windows
 
+# Install dependencies from pyproject.toml
+uv sync
+```
+
+### Setup with pip
+```bash
+# Clone the repository
+git clone git@github.com:YogeLiu/hello-rag.git
+cd hello-rag
+
+# Create virtual environment
+python -m venv .venv
+source .venv/bin/activate  # On Unix/macOS
+# .venv\Scripts\activate   # On Windows
+
 # Install dependencies
-uv sync  # or pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 ## Usage
@@ -86,6 +101,15 @@ python -m text_spliter.simple
 ```
 
 ## Development
+
+### Installing Development Dependencies
+```bash
+# With UV
+uv sync --group dev
+
+# With pip
+pip install -e ".[dev]"
+```
 
 ### Running Tests
 ```bash
