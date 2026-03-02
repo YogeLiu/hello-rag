@@ -13,12 +13,17 @@ This document provides guidelines for AI agents working on the `hello-rag` proje
   - **Generation**: LLM integration, prompt engineering, response generation
   - **Evaluation**: Metrics, testing, quality assessment
 - **Dependencies**: LangChain (for comparison), Pydantic (for data models), embedding models, vector databases, and LLM SDKs.
-- **Current state**: The project currently has a `text_spliter/` module with bug annotations and missing implementations (see `text_spliter/simple.py`). Agents should prioritize fixing these and expanding the project to include full RAG components.
+- **Current state**: The project currently has a `text_spliter/` module with bug annotations and missing implementations (see `text_spliter/simple.py`).
+- **Learning approach**: This is a learnable project where the user will implement components. Agents should:
+  - Help with scaffolding, project structure, and documentation
+  - Fix bugs in existing code (like those annotated in `text_spliter/simple.py`)
+  - Provide guidance and references, but NOT implement core RAG features
+  - Use LangChain only as a reference for learning, not for implementation
 
 ## Environment Setup
 
 1. **Virtual environment**: Already set up via UV at `.venv`. Activate with `source .venv/bin/activate` (Unix) or `.venv\Scripts\activate` (Windows).
-2. **Install dependencies**: If missing, run `uv sync` (if `pyproject.toml` exists) or `pip install -r requirements.txt`.
+2. **Install dependencies**: If missing, run `uv sync` (if `pyproject.toml` exists). Use `uv pip install` for individual packages.
 3. **Development dependencies**: No explicit dev dependencies yet; consider adding `pytest`, `black`, `ruff`, `mypy`, `isort`.
 
 ## Build, Lint, and Test Commands
@@ -31,7 +36,7 @@ Since no explicit build system is defined, the following commands are recommende
 - **Run a single test**: `pytest path/to/test_file.py::test_function_name`
 - **Run tests with coverage**: `pytest --cov=text_spliter`
 
-**Note**: Currently there are no test files. When creating tests, place them in a `tests/` directory mirroring the module structure (e.g., `tests/test_simple.py`).
+**Note**: Currently there are basic test files. When creating tests, place them in a `tests/` directory mirroring the module structure (e.g., `tests/test_simple.py`).
 
 ### Manual Testing
 - **Run the module directly**: `python -m text_spliter.simple` (prints test output).
