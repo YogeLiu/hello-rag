@@ -19,10 +19,20 @@ hello-rag/
 ├── text_spliter/          # Text chunking strategies
 │   ├── __init__.py
 │   └── simple.py          # Simple and recursive text splitters
-├── retrieval/             # Vector stores and embeddings (planned)
-├── generation/           # LLM integration (planned)
-├── evaluation/           # Metrics and testing (planned)
-└── tests/               # Test suite (planned)
+├── retrieval/             # Vector stores and embeddings
+│   └── __init__.py
+├── generation/           # LLM integration
+│   └── __init__.py
+├── evaluation/           # Metrics and testing
+│   └── __init__.py
+└── tests/               # Test suite
+│   ├── __init__.py
+│   └── test_simple.py
+├── pyproject.toml        # Project configuration
+├── requirements.txt      # Python dependencies
+├── README.md            # Project documentation
+├── AGENTS.md            # AI agent guidelines
+└── LICENSE              # MIT License
 ```
 
 ## Current Status
@@ -33,11 +43,16 @@ Currently implemented:
 - ✅ `RecursiveTextSplitter` - Semantic-aware recursive splitting (with bug annotations)
 - ✅ Comparison with LangChain's text splitters
 
-Planned components:
-- 🔄 Vector store integration (FAISS, Chroma)
-- 🔄 Embedding models (OpenAI, sentence-transformers)
-- 🔄 LLM integration (OpenAI, Anthropic, local models)
-- 🔄 Evaluation framework (retrieval metrics, answer quality)
+Recently added:
+- ✅ Project structure with modular directories
+- ✅ Basic test suite for text_spliter
+- ✅ Project configuration (pyproject.toml, requirements.txt)
+
+Planned implementations:
+- 🔄 Vector store integration (FAISS, Chroma) - *directory created*
+- 🔄 Embedding models (OpenAI, sentence-transformers) - *directory created*
+- 🔄 LLM integration (OpenAI, Anthropic, local models) - *directory created*
+- 🔄 Evaluation framework (retrieval metrics, answer quality) - *directory created*
 
 ## Installation
 
